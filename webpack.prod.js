@@ -10,7 +10,7 @@ module.exports = merge(common, {
 				'NODE_ENV': JSON.stringify('production')
 			}
 		}),
+		new webpack.optimize.ModuleConcatenationPlugin(),
 		new UglifyJSPlugin(),
-		new webpack.optimize.ModuleConcatenationPlugin(),		
 	]
 });
