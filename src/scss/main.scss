@@ -1,3 +1,10 @@
-.teste {
-    color: #000000
-}
+
+
+
+@import "../components/Header/Header.scss";
+@import "../components/Footer/Footer.scss";
+@import "../components/BagList/BagList.scss";
+
+@import "./global_styles.scss";
+@import "./fonts.scss";
+@import "./icons.scss";
