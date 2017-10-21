@@ -1,0 +1,36 @@
+{
+  "name": "js_challenge_pedro_moura",
+  "version": "1.0.0",
+  "description": "JS_Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "webpack",
+    "watch": "webpack --progress --watch",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/pedrosousamoura/js_challenge_Pedro-Moura.git"
+  },
+  "author": "Pedro Moura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/pedrosousamoura/js_challenge_Pedro-Moura/issues"
+  },
+  "homepage": "https://gitlab.com/pedrosousamoura/js_challenge_Pedro-Moura#README",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  }
+}
