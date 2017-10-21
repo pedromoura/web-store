@@ -1,5 +1,7 @@
-const test = () => {
-	console.log('yo');
-};
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-test();
+ReactDOM.render(
+ 	<div><h1>Teste</h1></div>,
+	document.getElementById('app')
+);
