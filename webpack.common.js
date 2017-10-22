@@ -12,7 +12,17 @@ module.exports = {
         rules: [
             { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
             { test: /\.scss$/, use: ExtractTextPlugin.extract(['css-loader', 'sass-loader']) },
-            { test: /\.(png|svg|jpg|gif)$/, use: ['file-loader'] },
+            {
+                test: /\.(png|svg|jpg|gif)$/, use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'images/'
+                        },
+                    },
+                ]
+            },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/, use: [
                     {
