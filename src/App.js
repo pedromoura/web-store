@@ -17,6 +17,11 @@ class App extends Component {
                 products: [],
                 bag: [],
                 wishList: [],
+                pagination: {
+                    totalResults: 0,
+                    pageSize: 0,
+                    pageNr: 1
+                }
             },
         };
 
@@ -31,7 +36,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        ShoppingActions.GetProductsList(1);
+        const { pagination } = this.state.store;
+        const { pageNr } = pagination;
+        ShoppingActions.GetProductsList(pageNr);
     }
 
     _onStoreChange(store) {
@@ -39,7 +46,12 @@ class App extends Component {
     }
 
     render() {
-        const { products, bag, wishList } = this.state.store;
+        const {
+            products,
+            bag,
+            wishList,
+            pagination
+        } = this.state.store;
         return (
             <div>
                 <Header>
@@ -54,6 +66,7 @@ class App extends Component {
                     bagList={bag}
                     wishList={wishList}
                     productsList={products}
+                    pagination={pagination}
                 />
                 <Footer />
             </div>

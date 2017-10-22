@@ -2,6 +2,8 @@ import Reflux from 'reflux';
 import ShoppingActions from '../actions/ShoppingActions';
 import Products from '../datasource/products.json';
 
+const PAGESIZE = 6;
+
 class ShoppingStore extends Reflux.Store {
     constructor() {
         super();
@@ -11,6 +13,11 @@ class ShoppingStore extends Reflux.Store {
             products: [],
             bag: [],
             wishList: [],
+            pagination: {
+                totalResults: this._productsDataSource.length,
+                pageSize: PAGESIZE,
+                pageNr: 1,
+            }
         };
     }
 
@@ -43,8 +50,9 @@ class ShoppingStore extends Reflux.Store {
     }
 
     onGetProductsList(pageNr) {
-        pageNr--;
-        this.store.products = this._productsDataSource.slice(pageNr * 6, (pageNr + 1) * 6);
+        this.store.pagination = Object.assign(this.store.pagination, { pageNr });
+        const arrayPager = pageNr - 1;
+        this.store.products = this._productsDataSource.slice(arrayPager * PAGESIZE, (arrayPager + 1) * PAGESIZE);
         this.trigger(this.store);
     }
 }

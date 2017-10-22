@@ -18,7 +18,12 @@ class MainContent extends Component {
     }
 
     render() {
-        const { productsList, bagList, wishList } = this.props;
+        const {
+            productsList,
+            bagList,
+            wishList,
+            pagination
+        } = this.props;
         return (
             <main className="product-page">
                 <div className="container">
@@ -34,7 +39,9 @@ class MainContent extends Component {
                             ))
                         }
                     </ul>
-                    <PaginationBar />
+                    <PaginationBar
+                        pagination={pagination}
+                    />
                 </div>
             </main>
         );
@@ -42,9 +49,10 @@ class MainContent extends Component {
 }
 
 MainContent.propTypes = {
+    pagination: PropTypes.object.isRequired,
     wishList: PropTypes.array.isRequired,
     bagList: PropTypes.array.isRequired,
-    productsList: PropTypes.array.isRequired
+    productsList: PropTypes.array.isRequired,
 };
 
 export default MainContent;

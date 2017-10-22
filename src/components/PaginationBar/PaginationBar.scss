@@ -2,7 +2,7 @@
    Pagination
    ========================================================================== */
 
-   .pagination {
+.pagination {
     height: 45px;
     margin: 30px auto;
     text-align: center;
@@ -30,11 +30,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;    
     color: #444A59;
+    background-color: #f8f8f8;
+}
+
+.pagination__link--active {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #358ed7;
+    color: white;
 }
 
 .pagination__link:hover {
     text-decoration: underline;
+}
+
+.pagination__link:disabled {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: not-allowed;
+    background-color: #dcdcdc;
+    color: #a6a2a2;
 }
 
 .pagination__link .icon {
