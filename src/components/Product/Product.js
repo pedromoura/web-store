@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../../assets/images/img01.jpg'
+import '../../assets/images/img01.jpg';
 import ShoppingActions from '../../actions/ShoppingActions';
 
 class Product extends Component {
