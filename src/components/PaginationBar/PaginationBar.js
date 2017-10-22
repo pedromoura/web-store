@@ -9,9 +9,20 @@ class PaginationBar extends Component {
         super();
 
         [
-            '_setPage'
+            '_setPage',
+            '_getNrOfPages'
         ].forEach(fn => this[fn] = this[fn].bind(this));
 
+    }
+
+    _getNrOfPages() {
+        const { pagination } = this.props;
+        const { totalResults, pageSize } = pagination;
+        let nrOfPages = 0;
+        if (totalResults > 0 && pageSize > 0) {
+            nrOfPages = totalResults / pageSize;
+        }
+        return nrOfPages;
     }
 
     _setPage(pageNrClicked) {
@@ -26,16 +37,10 @@ class PaginationBar extends Component {
         } = this.props;
 
         const {
-            totalResults,
-            pageSize,
             pageNr
         } = pagination;
 
-        let nrOfPages = 0;
-        if (totalResults > 0 && pageSize > 0) {
-            nrOfPages = totalResults / pageSize;
-        }
-
+        const nrOfPages = this._getNrOfPages();
         const pages = [];
         for (let i = 1; i <= nrOfPages; i++) {
             pages.push(
